@@ -1,0 +1,82 @@
+!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>استاویتا | ورود / ثبت‌نام</title>
+  <link rel="stylesheet" href="main.css">
+  <!-- Optional Persian font (swap with your self-hosted) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="page">
+    <section class="auth-card" role="dialog" aria-labelledby="authTitle" aria-describedby="authDesc">
+      <!-- Left: Illustration / gradient panel -->
+      <aside class="art-panel">
+        <div class="logo-wrap">
+          <img src="https://placehold.co/160x44?text=stavita" alt="Stavita" class="logo">
+          <span class="logo-sub">SELLER CENTER</span>
+        </div>
+        <div class="art-wrap">
+          <img src="" alt="" class="art">
+        </div>
+      </aside>
+
+      <!-- Right: Form -->
+      <div class="form-panel">
+        <button class="close-btn" aria-label="بستن">×</button>
+
+        <h1 id="authTitle" class="title">ورود یا ثبت نام</h1>
+        <p id="authDesc" class="lead">
+          سلام! <br>
+          برای فروش در استاویتا آماده‌اید؟ <br>
+          شماره موبایل یا ایمیل خود را وارد کنید:
+        </p>
+
+        <form class="auth-form" id="loginForm" novalidate>
+          <label for="identifier" class="field-label">شماره موبایل یا ایمیل</label>
+          <div class="field">
+            <input id="identifier" name="identifier" inputmode="text" autocomplete="username" placeholder="09123456789">
+          </div>
+
+          <button type="submit" class="primary-btn">تایید</button>
+
+          <div class="help-links">
+            <a href="#" class="link">تماس با پشتیبانی</a>
+            <span class="divider" aria-hidden="true"></span>
+            <a href="#" class="link">راهنمای ثبت‌نام</a>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Minimal UX: toggle mobile menu (close btn just hides card for prototype)
+    document.querySelector('.close-btn')?.addEventListener('click', ()=>{
+      document.querySelector('.auth-card').classList.toggle('is-hidden');
+    });
+
+    // Simple validation placeholder (email or 11-digit IR mobile) for demo
+    const form = document.getElementById('loginForm');
+    const input = document.getElementById('identifier');
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const v = input.value.trim();
+      const isEmail = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(v);
+      const isIRMobile = /^09\\d{9}$/.test(v);
+      if(!(isEmail || isIRMobile)) {
+        input.classList.add('has-error');
+        input.focus();
+        input.setAttribute('aria-invalid', 'true');
+        input.setAttribute('title','یک ایمیل معتبر یا شماره موبایل ۱۱ رقمی وارد کنید');
+        return;
+      }
+      input.classList.remove('has-error');
+      alert('ارسال شد (نمونه)');
+    });
+  </script>
+</body>
+</html>
