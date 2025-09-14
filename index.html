@@ -1,81 +1,143 @@
-!doctype html>
+<!doctype html>
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>استاویتا | ورود / ثبت‌نام</title>
   <link rel="stylesheet" href="main.css">
-  <!-- Optional Persian font (swap with your self-hosted) -->
+  <!-- Persian fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <main class="page">
-    <section class="auth-card" role="dialog" aria-labelledby="authTitle" aria-describedby="authDesc">
-      <!-- Left: Illustration / gradient panel -->
-      <aside class="art-panel">
-        <div class="logo-wrap">
-          <img src="https://placehold.co/160x44?text=stavita" alt="Stavita" class="logo">
-          <span class="logo-sub">SELLER CENTER</span>
+    <!-- Desktop Layout -->
+    <div class="desktop-layout">
+      <!-- Background Card -->
+      <div class="main-card">
+        <!-- Left Gradient Panel -->
+        <div class="gradient-panel">
+          <!-- Logo Section -->
+          <div class="logo-section">
+            <img src="img/icon_login.svg" alt="Stavita Logo" class="desktop-logo">
+            <div class="logo-sub-text">SELLER CENTER</div>
+          </div>
+          <!-- Illustration -->
+          <div class="illustration-container">
+            <img src="img/3d-render-secure-login-password-illustration---Copy 1 (2).png" alt="Login Illustration" class="illustration">
+          </div>
         </div>
-        <div class="art-wrap">
-          <img src="" alt="" class="art">
-        </div>
-      </aside>
 
-      <!-- Right: Form -->
-      <div class="form-panel">
-        <button class="close-btn" aria-label="بستن">×</button>
-
-        <h1 id="authTitle" class="title">ورود یا ثبت نام</h1>
-        <p id="authDesc" class="lead">
-          سلام! <br>
-          برای فروش در استاویتا آماده‌اید؟ <br>
-          شماره موبایل یا ایمیل خود را وارد کنید:
-        </p>
-
-        <form class="auth-form" id="loginForm" novalidate>
-          <label for="identifier" class="field-label">شماره موبایل یا ایمیل</label>
-          <div class="field">
-            <input id="identifier" name="identifier" inputmode="text" autocomplete="username" placeholder="09123456789">
+        <!-- Right Form Panel -->
+        <div class="form-section">
+          <button class="close-btn" aria-label="بستن">×</button>
+          
+          <h1 class="form-title">ورود یا ثبت نام</h1>
+          
+          <div class="form-description">
+            <p>سلام!</p>
+            <p>برای فروش در استاویتا آماده‌اید؟</p>
+            <p>شماره موبایل یا ایمیل خود را وارد کنید:</p>
           </div>
 
-          <button type="submit" class="primary-btn">تایید</button>
+          <form class="auth-form" id="loginForm" novalidate>
+            <label for="identifier" class="field-label">شماره موبایل یا ایمیل</label>
+            <div class="input-container">
+              <input id="identifier" name="identifier" inputmode="text" autocomplete="username" placeholder="09123456789">
+            </div>
 
-          <div class="help-links">
-            <a href="#" class="link">تماس با پشتیبانی</a>
-            <span class="divider" aria-hidden="true"></span>
-            <a href="#" class="link">راهنمای ثبت‌نام</a>
-          </div>
-        </form>
+            <button type="submit" class="submit-btn">تایید</button>
+
+            <div class="help-links">
+              <a href="#" class="help-link">تماس با پشتیبانی</a>
+              <span class="link-divider">|</span>
+              <a href="#" class="help-link">راهنمای ثبت‌نام</a>
+            </div>
+          </form>
+        </div>
       </div>
-    </section>
+    </div>
+
+    <!-- Mobile Layout -->
+    <div class="mobile-layout">
+      <!-- Mobile Card -->
+      <div class="mobile-card">
+        <!-- Mobile Illustration -->
+        <div class="mobile-illustration">
+          <img src="img/login_mob.png" alt="Mobile Login Illustration" class="mobile-illustration-img">
+        </div>
+        
+        <!-- Mobile Logo -->
+        <div class="mobile-logo">
+          <img src="img/icon_login.svg" alt="Stavita Logo" class="mobile-logo-img">
+        </div>
+
+        <!-- Mobile Close Button -->
+        <button class="mobile-close-btn" aria-label="بستن">×</button>
+
+        <!-- Mobile Form -->
+        <div class="mobile-form-section">
+          
+          <h1 class="mobile-form-title">ورود یا ثبت نام</h1>
+          
+          <div class="mobile-form-description">
+            <p>سلام!</p>
+            <p>برای فروش در استاویتا آماده‌اید؟</p>
+            <p>شماره موبایل یا ایمیل خود را وارد کنید:</p>
+          </div>
+
+          <form class="mobile-auth-form" id="mobileLoginForm" novalidate>
+            <div class="mobile-input-container">
+              <input id="mobileIdentifier" name="identifier" inputmode="text" autocomplete="username" placeholder="09123456789">
+            </div>
+
+            <button type="submit" class="mobile-submit-btn">تایید</button>
+
+            <div class="mobile-help-links">
+              <a href="#" class="mobile-help-link">تماس با پشتیبانی</a>
+              <span class="mobile-link-divider">|</span>
+              <a href="#" class="mobile-help-link">راهنمای ثبت‌نام</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </main>
 
   <script>
-    // Minimal UX: toggle mobile menu (close btn just hides card for prototype)
+    // Close button functionality
     document.querySelector('.close-btn')?.addEventListener('click', ()=>{
-      document.querySelector('.auth-card').classList.toggle('is-hidden');
+      document.querySelector('.desktop-layout').style.display = 'none';
+    });
+    
+    document.querySelector('.mobile-close-btn')?.addEventListener('click', ()=>{
+      document.querySelector('.mobile-layout').style.display = 'none';
     });
 
-    // Simple validation placeholder (email or 11-digit IR mobile) for demo
-    const form = document.getElementById('loginForm');
-    const input = document.getElementById('identifier');
-    form.addEventListener('submit', (e)=>{
-      e.preventDefault();
-      const v = input.value.trim();
-      const isEmail = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(v);
-      const isIRMobile = /^09\\d{9}$/.test(v);
-      if(!(isEmail || isIRMobile)) {
-        input.classList.add('has-error');
-        input.focus();
-        input.setAttribute('aria-invalid', 'true');
-        input.setAttribute('title','یک ایمیل معتبر یا شماره موبایل ۱۱ رقمی وارد کنید');
-        return;
-      }
-      input.classList.remove('has-error');
-      alert('ارسال شد (نمونه)');
+    // Form validation
+    const forms = ['loginForm', 'mobileLoginForm'];
+    forms.forEach(formId => {
+      const form = document.getElementById(formId);
+      const input = form.querySelector('input[name="identifier"]');
+      
+      form.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        const v = input.value.trim();
+        const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+        const isIRMobile = /^09\d{9}$/.test(v);
+        
+        if(!(isEmail || isIRMobile)) {
+          input.classList.add('has-error');
+          input.focus();
+          input.setAttribute('aria-invalid', 'true');
+          input.setAttribute('title','یک ایمیل معتبر یا شماره موبایل ۱۱ رقمی وارد کنید');
+          return;
+        }
+        
+        input.classList.remove('has-error');
+        alert('ارسال شد (نمونه)');
+      });
     });
   </script>
 </body>

@@ -1,200 +1,1239 @@
-/* ========== main.css (Login) ========== */
-:root{
-  --bg:#ffffff;
-  --card:#F6F7FB;
-  --text:#606060;
-  --blue:#0560FD;
-  --blue-600:#0091D0;
-  --red:#ED1C24;
-  --shadow:0 2px 8px rgba(0,0,0,.10);
-  --radius-xl:20px;
-  --radius-lg:12px;
-  --radius-md:10px;
+/* ========== Stavita Login Panel CSS - Exact Figma Match ========== */
+
+/* CSS Variables */
+:root {
+  --bg-white: #ffffff;
+  --card-bg: #F6F7FB;
+  --text-primary: #606060;
+  --blue-primary: #0560FD;
+  --blue-gradient-start: rgba(0, 145, 208, 0.20);
+  --blue-gradient-end: rgba(0, 145, 208, 0.80);
+  --red-primary: #ED1C24;
+  --input-border: #707175;
+  --shadow-light: 0px 2px 3px rgba(0, 0, 0, 0.10);
+  --shadow-strong: 0px 0px 10px #0091D0;
+  --border-radius: 20px;
+  --border-radius-sm: 10px;
 }
 
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  background:var(--bg);
-  font-family:"Vazirmatn", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "IRANSans", sans-serif;
-  color:var(--text);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* Layout */
-.page{
-  min-height:100%;
-  display:grid;
-  place-items:center;
-  padding:24px;
-}
-.auth-card{
-  width:min(100%, 1080px);
-  background:var(--card);
-  border-radius:var(--radius-xl);
-  box-shadow:var(--shadow);
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap:0;
-  overflow:hidden;
-  position:relative;
-}
-.auth-card.is-hidden{display:none}
-
-/* Left Gradient Panel */
-.art-panel{
-  position:relative;
-  background:linear-gradient(180deg, rgba(0,145,208,0.20) 0%, rgba(0,145,208,0.80) 100%);
-  padding:28px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:flex-start;
-}
-.logo-wrap{
-  width:100%;
-  display:flex;
-  align-items:center;
-  gap:12px;
-  margin-bottom:16px;
-}
-.logo{height:44px; width:auto; display:block}
-.logo-sub{
-  margin-inline-start:8px;
-  color:#fff;
-  font-weight:700;
-  letter-spacing:.5px;
-  opacity:.95;
+html, body {
+  height: 100%;
+  font-family: 'Vazirmatn', 'Yekan Bakh', 'IRANYekan', system-ui, -apple-system, sans-serif;
+  background: var(--bg-white);
+  color: var(--text-primary);
+  direction: rtl;
+  overflow: hidden;
 }
 
-.art-wrap{
-  width:100%;
-  display:grid;
-  place-items:center;
-  margin-top:12px;
-}
-.art{
-  width:316px; height:316px; object-fit:contain; display:block;
-  filter: drop-shadow(0 4px 4px rgba(0,0,0,.25));
-}
-
-/* Right Form Panel */
-.form-panel{
-  position:relative;
-  padding:32px 36px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  gap:16px;
-  background:#F6F7FB;
+/* Desktop Layout - Exact Match */
+.desktop-layout {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: var(--bg-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.close-btn{
-  position:absolute;
-  inset-inline-start:12px;
-  top:12px;
-  width:32px;height:32px;
-  border:none;border-radius:50%;
-  background:transparent;
-  font-size:24px;line-height:32px;
-  color:#7a7a7a;cursor:pointer;
-}
-.close-btn:hover{background:rgba(0,0,0,.06)}
-
-.title{
-  margin:0;
-  font-size:22px;
-  font-weight:700;
-  color:var(--text);
-}
-.lead{
-  margin:0;
-  line-height:1.9;
-  letter-spacing:.02em;
-  color:var(--text);
-  opacity:.95;
+.main-card {
+  width: 820px;
+  height: 470px;
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  position: relative;
+  display: flex;
+  overflow: hidden;
 }
 
-.auth-form{margin-top:8px; display:flex; flex-direction:column; gap:14px}
-.field-label{
-  font-size:16px; color:var(--text);
-}
-.field{
-  background:#fff;
-  border:1px solid #707175;
-  border-radius:var(--radius-md);
-  box-shadow:0 2px 3px rgba(0,0,0,.10);
-  height:48px;
-  display:flex;
-  align-items:center;
-  padding:0 12px;
-}
-.field input{
-  width:100%; height:100%;
-  border:none; outline:none;
-  font-size:18px; color:#4b4b4b;
-  background:transparent;
-}
-.field input::placeholder{color:#707175}
-.field input.has-error{outline:2px solid #ED1C24}
-
-.primary-btn{
-  height:48px;
-  border:none;
-  border-radius:var(--radius-md);
-  background:var(--blue);
-  box-shadow:0 2px 3px rgba(0,0,0,.10), 0 0 10px var(--blue-600);
-  color:#fff;
-  font-weight:700;
-  font-size:16px;
-  cursor:pointer;
-  transition:filter .15s ease, transform .02s ease;
-}
-.primary-btn:hover{filter:brightness(1.05)}
-.primary-btn:active{transform:translateY(1px)}
-
-.help-links{
-  margin-top:4px;
-  display:flex;
-  align-items:center;
-  gap:14px;
-  justify-content:center;
-  font-weight:700;
-}
-.help-links .link{
-  color:var(--blue);
-  text-decoration:none;
-  font-size:13px;
-}
-.help-links .link:hover{text-decoration:underline}
-.help-links .divider{
-  width:1px;height:19px;background:var(--red);display:inline-block;
+/* Left Gradient Panel - Exact positioning */
+.gradient-panel {
+  width: 365px;
+  height: 410px;
+  background: linear-gradient(180deg, var(--blue-gradient-start) 0%, var(--blue-gradient-end) 100%);
+  border-radius: var(--border-radius-sm);
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 42px 0;
 }
 
-/* ---------- Responsive ---------- */
-@media (max-width: 1024px){
-  .auth-card{
-    grid-template-columns: 1fr;
-    width:min(100%, 560px);
+/* Logo Section - Exact positioning from Figma */
+.logo-section {
+  position: absolute;
+  left: 42px;
+  top: 42px;
+  width: 163px;
+  height: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.desktop-logo {
+  width: 163px;
+  height: 35px;
+  object-fit: contain;
+  display: block;
+}
+
+.logo-sub-text {
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'Yekan Bakh', sans-serif;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+/* Illustration - Exact positioning */
+.illustration-container {
+  position: absolute;
+  left: 18px;
+  top: 98px;
+  width: 316px;
+  height: 316px;
+}
+
+.illustration {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Right Form Panel - Exact positioning */
+.form-section {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 425px;
+  height: 470px;
+  padding: 32px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+/* Close Button - Exact positioning */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.close-btn:hover {
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: 50%;
+}
+
+/* Form Title - Exact positioning */
+.form-title {
+  position: absolute;
+  right: 36px;
+  top: 37px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: right;
+  margin: 0;
+  line-height: 25.8px;
+  font-family: 'Yekan Bakh', sans-serif;
+}
+
+/* Form Description - Exact positioning */
+.form-description {
+  position: absolute;
+  right: 36px;
+  top: 107px;
+  width: 375px;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-primary);
+  text-align: center;
+  line-height: 31.1px;
+  letter-spacing: 0.54px;
+  font-family: 'Yekan Bakh', sans-serif;
+}
+
+.form-description p {
+  margin: 0;
+}
+
+/* Field Label - Exact positioning */
+.field-label {
+  position: absolute;
+  right: 36px;
+  top: 245px;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text-primary);
+  text-align: right;
+  line-height: 30.1px;
+  font-family: 'Yekan Bakh', sans-serif;
+}
+
+/* Input Container - Exact positioning */
+.input-container {
+  position: absolute;
+  right: 36px;
+  top: 284px;
+  width: 375px;
+  height: 48px;
+  background: var(--bg-white);
+  border: 1px solid var(--input-border);
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--shadow-light);
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+}
+
+.input-container input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 20px;
+  color: var(--input-border);
+  text-align: right;
+  font-family: 'Yekan Bakh', sans-serif;
+}
+
+.input-container input::placeholder {
+  color: var(--input-border);
+}
+
+.input-container input.has-error {
+  outline: 2px solid var(--red-primary);
+}
+
+/* Submit Button - Exact positioning */
+.submit-btn {
+  position: absolute;
+  right: 36px;
+  top: 341px;
+  width: 375px;
+  height: 48px;
+  background: var(--blue-primary);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--shadow-light);
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'IRANYekan', sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.submit-btn:hover {
+  background: #0452e0;
+}
+
+.submit-btn:active {
+  transform: translateY(1px);
+}
+
+/* Help Links - Exact positioning */
+.help-links {
+  position: absolute;
+  right: 36px;
+  bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.help-link {
+  color: var(--blue-primary);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: 'IRANYekan', sans-serif;
+  line-height: 25.8px;
+}
+
+.help-link:hover {
+  text-decoration: underline;
+}
+
+.link-divider {
+  color: var(--red-primary);
+  font-size: 12px;
+  font-weight: 700;
+  width: 1px;
+  height: 19px;
+  background: var(--red-primary);
+  display: inline-block;
+}
+
+/* Mobile Layout - Exact Match */
+.mobile-layout {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: var(--bg-white);
+  align-items: flex-start;
+  justify-content: center;
+  padding: 135px 22px 0;
+}
+
+.mobile-card {
+  width: 440px;
+  height: 811px;
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Mobile Close Button - Exact positioning */
+.mobile-close-btn {
+  position: absolute;
+  top: 21px;
+  right: 42px;
+  width: 19px;
+  height: 19px;
+  background: var(--text-primary);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 12px;
+  z-index: 10;
+}
+
+/* Mobile Logo - Exact positioning */
+.mobile-logo {
+  position: absolute;
+  top: 20px;
+  left: 139px;
+  width: 205px;
+  height: 44px;
+}
+
+.mobile-logo-img {
+  width: 205px;
+  height: 44px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Mobile Illustration - Exact positioning */
+.mobile-illustration {
+  position: absolute;
+  left: 79px;
+  top: 56px;
+  width: 288px;
+  height: 394px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+}
+
+.mobile-illustration-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Mobile Form Section - Exact positioning */
+.mobile-form-section {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 220px;
+  padding: 20px 42px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Mobile Form Title - Exact positioning */
+.mobile-form-title {
+  position: absolute;
+  right: 42px;
+  top: 437px;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: right;
+  margin: 0;
+  line-height: 25.8px;
+  font-family: 'Yekan Bakh', sans-serif;
+}
+
+/* Mobile Form Description - Exact positioning */
+.mobile-form-description {
+  position: absolute;
+  right: 42px;
+  top: 477px;
+  width: 356px;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text-primary);
+  text-align: center;
+  line-height: 31.1px;
+  letter-spacing: 0.6px;
+  font-family: 'Yekan Bakh', sans-serif;
+}
+
+.mobile-form-description p {
+  margin: 0;
+}
+
+/* Mobile Input Container - Exact positioning */
+.mobile-input-container {
+  position: absolute;
+  right: 42px;
+  top: 605px;
+  width: 400px;
+  height: 60px;
+  background: var(--bg-white);
+  border: 1px solid var(--input-border);
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--shadow-light);
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+}
+
+.mobile-input-container input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 30px;
+  color: var(--input-border);
+  text-align: right;
+  font-family: 'Yekan Bakh', sans-serif;
+}
+
+.mobile-input-container input::placeholder {
+  color: var(--input-border);
+}
+
+.mobile-input-container input.has-error {
+  outline: 2px solid var(--red-primary);
+}
+
+/* Mobile Submit Button - Exact positioning */
+.mobile-submit-btn {
+  position: absolute;
+  right: 42px;
+  top: 675px;
+  width: 400px;
+  height: 60px;
+  background: var(--blue-primary);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--shadow-strong);
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'IRANYekan', sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.mobile-submit-btn:hover {
+  background: #0452e0;
+}
+
+.mobile-submit-btn:active {
+  transform: translateY(1px);
+}
+
+/* Mobile Help Links - Exact positioning */
+.mobile-help-links {
+  position: absolute;
+  right: 42px;
+  bottom: 75px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.mobile-help-link {
+  color: var(--blue-primary);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: 'IRANYekan', sans-serif;
+  line-height: 25.8px;
+}
+
+.mobile-help-link:hover {
+  text-decoration: underline;
+}
+
+.mobile-link-divider {
+  color: var(--red-primary);
+  font-size: 15px;
+  font-weight: 700;
+  width: 1px;
+  height: 19px;
+  background: var(--red-primary);
+  display: inline-block;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .desktop-layout {
+    display: none;
   }
-  .art-panel{
-    padding:20px 20px 8px;
+  
+  .mobile-layout {
+    display: flex;
   }
-  .logo-wrap{justify-content:center}
-  .logo-sub{font-size:14px}
-  .art{width:288px; height:288px}
-  .form-panel{padding:24px}
-  .title{font-size:20px}
-  .lead{font-size:15px}
-  .field input{font-size:18px}
-  .primary-btn{height:56px; font-size:18px}
-  .help-links .link{font-size:14px}
 }
 
-/* tiny phones */
-@media (max-width: 380px){
-  .art{width:240px; height:240px}
-  .primary-btn{height:52px}
+@media (max-width: 480px) {
+  .mobile-layout {
+    padding: 100px 15px 0;
+  }
+  
+  .mobile-card {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    min-height: 750px;
+  }
+  
+  .mobile-illustration {
+    width: 250px;
+    height: 350px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .mobile-input-container,
+  .mobile-submit-btn {
+    width: 100%;
+    max-width: 350px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
+
+@media (max-width: 360px) {
+  .mobile-form-section {
+    padding: 15px 30px 30px;
+  }
+  
+  .mobile-illustration {
+    width: 220px;
+    height: 300px;
+  }
+}
+
+/* ========== OTP Page Styles ========== */
+
+/* Desktop OTP Layout */
+.desktop-otp-layout {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: var(--bg-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-otp-card {
+  width: 820px;
+  height: 470px;
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+
+/* OTP Form Section - Exact positioning */
+.otp-form-section {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 425px;
+  height: 470px;
+  padding: 32px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+/* OTP Form Title - Exact positioning */
+.otp-form-title {
+  position: absolute;
+  right: 36px;
+  top: 35px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: right;
+  margin: 0;
+  line-height: 33.6px;
+  font-family: 'IRANYekan', sans-serif;
+}
+
+/* OTP Form Description - Exact positioning */
+.otp-form-description {
+  position: absolute;
+  right: 36px;
+  top: 99px;
+  width: 375px;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-primary);
+  text-align: center;
+  line-height: 31.1px;
+  font-family: 'Yekan Bakh', sans-serif;
+}
+
+.otp-form-description p {
+  margin: 0;
+}
+
+/* Phone Display - Exact positioning */
+.phone-display-container {
+  position: absolute;
+  right: 36px;
+  top: 144px;
+  width: 375px;
+  height: 48px;
+}
+
+.phone-display {
+  width: 155px;
+  height: 48px;
+  background: #F3F3F3;
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--shadow-light);
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  gap: 8px;
+}
+
+.edit-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: block;
+}
+
+.phone-number {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-primary);
+  font-family: 'IRANYekan', sans-serif;
+  line-height: 30.1px;
+}
+
+/* OTP Input Fields - Exact positioning */
+.otp-input-container {
+  position: absolute;
+  right: 36px;
+  top: 220px;
+  width: 375px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.otp-input {
+  width: 55px;
+  height: 49px;
+  border: none;
+  border-bottom: 1px solid var(--text-primary);
+  background: transparent;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: 'Yekan Bakh', sans-serif;
+  outline: none;
+}
+
+.otp-input:focus {
+  border-bottom-color: var(--blue-primary);
+  border-bottom-width: 2px;
+}
+
+.otp-input:last-child {
+  width: 62px;
+}
+
+/* Timer - Exact positioning */
+.timer-container {
+  position: absolute;
+  right: 36px;
+  top: 288px;
+  width: 375px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.timer-text {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-primary);
+  font-family: 'Yekan Bakh', sans-serif;
+  line-height: 25.8px;
+}
+
+.timer-countdown {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: 'Yekan Bakh', sans-serif;
+  line-height: 25.8px;
+}
+
+/* OTP Submit Button - Exact positioning */
+.otp-submit-btn {
+  position: absolute;
+  right: 36px;
+  top: 341px;
+  width: 375px;
+  height: 48px;
+  background: var(--blue-primary);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--shadow-light);
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'IRANYekan', sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.otp-submit-btn:hover {
+  background: #0452e0;
+}
+
+.otp-submit-btn:active {
+  transform: translateY(1px);
+}
+
+/* Mobile OTP Layout */
+.mobile-otp-layout {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: var(--bg-white);
+  align-items: flex-start;
+  justify-content: center;
+  padding: 135px 22px 0;
+}
+
+.mobile-otp-card {
+  width: 440px;
+  height: 811px;
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Mobile OTP Form Section - Exact positioning */
+.mobile-otp-form-section {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 220px;
+  padding: 20px 42px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Mobile OTP Form Description - Exact positioning */
+.mobile-otp-form-description {
+  position: absolute;
+  right: 42px;
+  top: 427px;
+  width: 356px;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text-primary);
+  text-align: center;
+  line-height: 31.1px;
+  font-family: 'Yekan Bakh', sans-serif;
+}
+
+.mobile-otp-form-description p {
+  margin: 0;
+}
+
+/* Mobile Phone Display - Exact positioning */
+.mobile-phone-display-container {
+  position: absolute;
+  left: 165px;
+  top: 607px;
+  width: 155px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+}
+
+.mobile-phone-display {
+  width: 155px;
+  height: 48px;
+  background: #F3F3F3;
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--shadow-light);
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  gap: 8px;
+}
+
+.mobile-edit-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: block;
+}
+
+.mobile-phone-number {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-primary);
+  font-family: 'IRANYekan', sans-serif;
+  line-height: 30.1px;
+}
+
+/* Mobile OTP Input Fields - Exact positioning */
+.mobile-otp-input-container {
+  position: absolute;
+  left: 77px;
+  top: 696px;
+  width: 356px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.mobile-otp-input {
+  width: 49px;
+  height: 49px;
+  border: none;
+  border-bottom: 1px solid var(--text-primary);
+  background: transparent;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: 'Yekan Bakh', sans-serif;
+  outline: none;
+}
+
+.mobile-otp-input:focus {
+  border-bottom-color: var(--blue-primary);
+  border-bottom-width: 2px;
+}
+
+.mobile-otp-input:last-child {
+  width: 55px;
+}
+
+/* Mobile Timer - Exact positioning */
+.mobile-timer-container {
+  position: absolute;
+  left: 138px;
+  top: 763px;
+  width: 218px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.mobile-timer-text {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text-primary);
+  font-family: 'Yekan Bakh', sans-serif;
+  line-height: 25.8px;
+}
+
+.mobile-timer-countdown {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: 'Yekan Bakh', sans-serif;
+  line-height: 25.8px;
+}
+
+/* Mobile OTP Submit Button - Exact positioning */
+.mobile-otp-submit-btn {
+  position: absolute;
+  left: 42px;
+  top: 810px;
+  width: 400px;
+  height: 60px;
+  background: var(--blue-primary);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--shadow-strong);
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'IRANYekan', sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.mobile-otp-submit-btn:hover {
+  background: #0452e0;
+}
+
+.mobile-otp-submit-btn:active {
+  transform: translateY(1px);
+}
+
+/* OTP Responsive Design */
+@media (max-width: 1024px) {
+  .desktop-otp-layout {
+    display: none;
+  }
+  
+  .mobile-otp-layout {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-otp-layout {
+    padding: 100px 15px 0;
+  }
+  
+  .mobile-otp-card {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    min-height: 750px;
+  }
+  
+  .mobile-otp-input-container {
+    width: 100%;
+    max-width: 350px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+  
+  .mobile-otp-submit-btn {
+    width: 100%;
+    max-width: 350px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
+
+@media (max-width: 360px) {
+  .mobile-otp-form-section {
+    padding: 15px 30px 30px;
+  }
+  
+  .mobile-otp-input {
+    width: 45px;
+  }
+  
+  .mobile-otp-input:last-child {
+    width: 50px;
+  }
+}
+
+/* ========== Sidebar Panel Styles ========== */
+
+/* Main Container */
+.sidebar-container {
+  width: 100%;
+  height: 100vh;
+  background: white;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 350px;
+  height: 100vh;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+  border-left: 1px solid #E5E7EB;
+}
+
+/* Sidebar Header */
+.sidebar-header {
+  padding: 16px 20px;
+  background: #ECF0FF;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.sidebar-user-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.sidebar-avatar-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.sidebar-user-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0F1723;
+  font-family: 'Yekan Bakh', sans-serif;
+}
+
+/* Sidebar Menu */
+.sidebar-menu {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.sidebar-menu::-webkit-scrollbar {
+  display: none; /* WebKit browsers (Chrome, Safari, Edge) */
+}
+
+.menu-section {
+  margin-bottom: 24px;
+}
+
+.menu-category {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.category-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.category-text {
+  font-size: 13px;
+  font-weight: 500;
+  color: #606060;
+  font-family: 'Yekan Bakh', sans-serif;
+  flex: 1;
+}
+
+.category-dot {
+  width: 8px;
+  height: 8px;
+  background: #0560FD;
+  border-radius: 50%;
+}
+
+.menu-submenu {
+  padding-right: 28px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  margin-bottom: 4px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.menu-item:hover {
+  background: rgba(5, 96, 253, 0.08);
+}
+
+/* Dashboard Active State - Light Blue Background */
+.menu-item.dashboard-active {
+  background: rgba(5, 96, 253, 0.15);
+}
+
+.menu-item.dashboard-active .menu-icon {
+  filter: none;
+}
+
+.menu-item.dashboard-active .menu-text {
+  color: #606060;
+}
+
+/* Main Active State - Dark Blue Background */
+.menu-item.main-active {
+  background: #0560FD;
+  box-shadow: 0px 4px 12px rgba(5, 96, 253, 0.3);
+}
+
+.menu-item.main-active .menu-icon {
+  filter: brightness(0) invert(1);
+}
+
+.menu-item.main-active .menu-text {
+  color: white;
+}
+
+/* Regular Active State */
+.menu-item.active {
+  background: #0560FD;
+  box-shadow: 0px 4px 12px rgba(5, 96, 253, 0.3);
+}
+
+.menu-item.active .menu-icon {
+  filter: brightness(0) invert(1);
+}
+
+.menu-item.active .menu-text {
+  color: white;
+}
+
+.menu-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.menu-text {
+  font-size: 13px;
+  font-weight: 500;
+  color: #606060;
+  font-family: 'Yekan Bakh', sans-serif;
+  flex: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .sidebar-header {
+    padding: 14px 18px;
+  }
+  
+  .sidebar-user-name {
+    font-size: 13px;
+  }
+  
+  .menu-text {
+    font-size: 11px;
+  }
+  
+  .category-text {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .sidebar-header {
+    padding: 12px 16px;
+  }
+  
+  .sidebar-user-info {
+    gap: 10px;
+  }
+  
+  .sidebar-avatar-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .sidebar-user-name {
+    font-size: 12px;
+  }
+  
+  .menu-item {
+    padding: 8px 10px;
+  }
+  
+  .menu-text {
+    font-size: 10px;
+  }
+  
+  .category-text {
+    font-size: 10px;
+  }
+  
+  .menu-icon, .category-icon {
+    width: 16px;
+    height: 16px;
+  }
 }

@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>استاویتا | ورود کد تایید</title>
+  <link rel="stylesheet" href="main.css">
+  <!-- Persian fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="page">
+    <!-- Desktop OTP Layout -->
+    <div class="desktop-otp-layout">
+      <!-- Background Card -->
+      <div class="main-otp-card">
+        <!-- Left Gradient Panel -->
+        <div class="gradient-panel">
+          <!-- Logo Section -->
+          <div class="logo-section">
+            <img src="img/icon_login.svg" alt="Stavita Logo" class="desktop-logo">
+            <div class="logo-sub-text">SELLER CENTER</div>
+          </div>
+          <!-- Illustration -->
+          <div class="illustration-container">
+            <img src="img/3d-render-secure-login-password-illustration---Copy 1 (2).png" alt="Login Illustration" class="illustration">
+          </div>
+        </div>
+
+        <!-- Right OTP Form Panel -->
+        <div class="otp-form-section">
+          <button class="close-btn" aria-label="بستن">×</button>
+          
+          <h1 class="otp-form-title">رمز یک‌بار مصرف</h1>
+          
+          <div class="otp-form-description">
+            <p>رمز را به شماره زیر پیامک کردیم. آن را وارد کنید:</p>
+          </div>
+
+          <!-- Phone Display -->
+          <div class="phone-display-container">
+            <div class="phone-display">
+              <img src="img/edit2.svg" alt="Edit" class="edit-icon">
+              <span class="phone-number">۰۹۱۲۴۷۱۷۰۵۸</span>
+            </div>
+          </div>
+
+          <!-- OTP Input Fields -->
+          <div class="otp-input-container">
+            <input type="text" class="otp-input" maxlength="1" data-index="0">
+            <input type="text" class="otp-input" maxlength="1" data-index="1">
+            <input type="text" class="otp-input" maxlength="1" data-index="2">
+            <input type="text" class="otp-input" maxlength="1" data-index="3">
+            <input type="text" class="otp-input" maxlength="1" data-index="4">
+            <input type="text" class="otp-input" maxlength="1" data-index="5">
+          </div>
+
+          <!-- Timer -->
+          <div class="timer-container">
+            <span class="timer-text">مانده تا دریافت مجدد</span>
+            <span class="timer-countdown">۰۱:۴۱</span>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="otp-submit-btn">ورود به پنل</button>
+
+          <!-- Help Links -->
+          <div class="help-links">
+            <a href="#" class="help-link">تماس با پشتیبانی</a>
+            <span class="link-divider">|</span>
+            <a href="#" class="help-link">راهنمای ثبت‌نام</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile OTP Layout -->
+    <div class="mobile-otp-layout">
+      <!-- Mobile Card -->
+      <div class="mobile-otp-card">
+        <!-- Mobile Illustration -->
+        <div class="mobile-illustration">
+          <img src="img/login_mob.png" alt="Mobile Login Illustration" class="mobile-illustration-img">
+        </div>
+        
+        <!-- Mobile Logo -->
+        <div class="mobile-logo">
+          <img src="img/icon_login.svg" alt="Stavita Logo" class="mobile-logo-img">
+        </div>
+
+        <!-- Mobile Close Button -->
+        <button class="mobile-close-btn" aria-label="بستن">×</button>
+
+        <!-- Mobile OTP Form -->
+        <div class="mobile-otp-form-section">
+          <div class="mobile-otp-form-description">
+            <p>رمز را به شماره زیر پیامک کردیم. آن را وارد کنید:</p>
+          </div>
+
+          <!-- Mobile Phone Display -->
+          <div class="mobile-phone-display-container">
+            <div class="mobile-phone-display">
+              <img src="img/edit2.svg" alt="Edit" class="mobile-edit-icon">
+              <span class="mobile-phone-number">۰۹۱۲۴۷۱۷۰۵۸</span>
+            </div>
+          </div>
+
+          <!-- Mobile OTP Input Fields -->
+          <div class="mobile-otp-input-container">
+            <input type="text" class="mobile-otp-input" maxlength="1" data-index="0">
+            <input type="text" class="mobile-otp-input" maxlength="1" data-index="1">
+            <input type="text" class="mobile-otp-input" maxlength="1" data-index="2">
+            <input type="text" class="mobile-otp-input" maxlength="1" data-index="3">
+            <input type="text" class="mobile-otp-input" maxlength="1" data-index="4">
+            <input type="text" class="mobile-otp-input" maxlength="1" data-index="5">
+          </div>
+
+          <!-- Mobile Timer -->
+          <div class="mobile-timer-container">
+            <span class="mobile-timer-text">مانده تا دریافت مجدد</span>
+            <span class="mobile-timer-countdown">۰۱:۴۱</span>
+          </div>
+
+          <!-- Mobile Submit Button -->
+          <button type="submit" class="mobile-otp-submit-btn">ورود به پنل</button>
+
+          <!-- Mobile Help Links -->
+          <div class="mobile-help-links">
+            <a href="#" class="mobile-help-link">تماس با پشتیبانی</a>
+            <span class="mobile-link-divider">|</span>
+            <a href="#" class="mobile-help-link">راهنمای ثبت‌نام</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Close button functionality
+    document.querySelector('.close-btn')?.addEventListener('click', ()=>{
+      document.querySelector('.desktop-otp-layout').style.display = 'none';
+    });
+    
+    document.querySelector('.mobile-close-btn')?.addEventListener('click', ()=>{
+      document.querySelector('.mobile-otp-layout').style.display = 'none';
+    });
+
+    // OTP Input handling
+    const otpInputs = document.querySelectorAll('.otp-input, .mobile-otp-input');
+    
+    otpInputs.forEach((input, index) => {
+      input.addEventListener('input', (e) => {
+        const value = e.target.value;
+        
+        // Only allow numbers
+        if (!/^\d*$/.test(value)) {
+          e.target.value = '';
+          return;
+        }
+        
+        // Move to next input
+        if (value && index < otpInputs.length - 1) {
+          otpInputs[index + 1].focus();
+        }
+      });
+      
+      input.addEventListener('keydown', (e) => {
+        // Move to previous input on backspace
+        if (e.key === 'Backspace' && !e.target.value && index > 0) {
+          otpInputs[index - 1].focus();
+        }
+      });
+      
+      input.addEventListener('paste', (e) => {
+        e.preventDefault();
+        const pastedData = e.clipboardData.getData('text');
+        const digits = pastedData.replace(/\D/g, '').slice(0, 6);
+        
+        digits.split('').forEach((digit, i) => {
+          if (otpInputs[i]) {
+            otpInputs[i].value = digit;
+          }
+        });
+        
+        if (digits.length === 6) {
+          otpInputs[5].focus();
+        } else if (digits.length > 0) {
+          otpInputs[digits.length].focus();
+        }
+      });
+    });
+
+    // Timer functionality
+    let timeLeft = 101; // 1:41 in seconds
+    
+    function updateTimer() {
+      const minutes = Math.floor(timeLeft / 60);
+      const seconds = timeLeft % 60;
+      const timeString = `${minutes.toString().padStart(2, '۰')}:${seconds.toString().padStart(2, '۴۱')}`;
+      
+      document.querySelectorAll('.timer-countdown, .mobile-timer-countdown').forEach(el => {
+        el.textContent = timeString;
+      });
+      
+      if (timeLeft > 0) {
+        timeLeft--;
+        setTimeout(updateTimer, 1000);
+      } else {
+        // Timer finished - enable resend
+        document.querySelectorAll('.timer-countdown, .mobile-timer-countdown').forEach(el => {
+          el.textContent = 'ارسال مجدد';
+        });
+      }
+    }
+    
+    updateTimer();
+
+    // Form submission
+    document.querySelectorAll('.otp-submit-btn, .mobile-otp-submit-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const otpCode = Array.from(otpInputs).map(input => input.value).join('');
+        
+        if (otpCode.length === 6) {
+          alert('کد تایید: ' + otpCode + ' (نمونه)');
+        } else {
+          alert('لطفاً کد ۶ رقمی را کامل وارد کنید');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
