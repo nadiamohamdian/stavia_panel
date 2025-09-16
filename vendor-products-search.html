@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>جستجو و ثبت کالا | استاویتا</title>
+  <link rel="stylesheet" href="main.css">
+  <!-- Persian fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Main Layout Shell -->
+  <div class="vp-layout-shell">
+    <!-- Header Component -->
+    <header class="vp-header">
+      <div class="vp-header__content">
+        <!-- Header Left - Icons -->
+        <div class="vp-header__left">
+          <button class="vp-header__icon-btn" aria-label="بارگذاری">
+            <img src="/img/placeholder-upload.svg" alt="بارگذاری" class="vp-header__icon">
+          </button>
+          <button class="vp-header__icon-btn vp-header__icon-btn--notification" aria-label="اعلان‌ها">
+            <img src="/img/placeholder-bell.svg" alt="اعلان‌ها" class="vp-header__icon">
+            <span class="vp-header__badge">24</span>
+          </button>
+        </div>
+
+        <!-- Header Right - User Info -->
+        <div class="vp-header__right">
+          <span class="vp-header__user-name">نام فروشنده</span>
+          <div class="vp-header__avatar">
+            <img src="/img/placeholder-avatar.svg" alt="آواتار کاربر" class="vp-header__avatar-img">
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Layout Container -->
+    <div class="vp-layout-container">
+      <!-- Sidebar Component -->
+      <aside class="vp-sidebar" id="vp-sidebar">
+        <!-- Sidebar Header -->
+        <div class="vp-sidebar__header">
+          <div class="vp-sidebar__user-info">
+            <div class="vp-sidebar__avatar">
+              <img src="/img/placeholder-avatar.svg" alt="آواتار کاربر" class="vp-sidebar__avatar-img">
+            </div>
+            <div class="vp-sidebar__user-details">
+              <h3 class="vp-sidebar__user-name">نام فروشنده</h3>
+              <p class="vp-sidebar__user-role">فروشنده</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="vp-sidebar__menu">
+          <!-- پیشخوان Section -->
+          <div class="vp-sidebar__section">
+            <h3 class="vp-sidebar__section-title">پیشخوان</h3>
+            <div class="vp-sidebar__submenu">
+              <a href="/vendor" class="vp-nav-item">
+                <img src="/img/placeholder-dashboard.svg" alt="پیشخوان" class="vp-nav-item__icon">
+                <span class="vp-nav-item__text">پیشخوان</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- کالا Section -->
+          <div class="vp-sidebar__section">
+            <h3 class="vp-sidebar__section-title">کالا</h3>
+            <div class="vp-sidebar__bullet"></div>
+            <div class="vp-sidebar__submenu">
+              <a href="/vendor/products/search" class="vp-nav-item vp-nav-item--active">
+                <img src="/img/placeholder-search.svg" alt="جستجو و ثبت کالا" class="vp-nav-item__icon">
+                <span class="vp-nav-item__text">جستجو و ثبت کالا</span>
+              </a>
+              <a href="/vendor/products/manage" class="vp-nav-item">
+                <img src="/img/placeholder-variant.svg" alt="مدیریت کالا و افزودن تنوع" class="vp-nav-item__icon">
+                <span class="vp-nav-item__text">مدیریت کالا و افزودن تنوع</span>
+              </a>
+              <a href="/vendor/products/pricing" class="vp-nav-item">
+                <img src="/img/placeholder-pricing.svg" alt="مدیریت تنوع و قیمت گذاری" class="vp-nav-item__icon">
+                <span class="vp-nav-item__text">مدیریت تنوع و قیمت گذاری</span>
+              </a>
+              <a href="/vendor/products/stock" class="vp-nav-item">
+                <img src="/img/placeholder-inventory.svg" alt="گزارش موجودی کالا" class="vp-nav-item__icon">
+                <span class="vp-nav-item__text">گزارش موجودی کالا</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- سفارش‌ها Section -->
+          <div class="vp-sidebar__section">
+            <h3 class="vp-sidebar__section-title">سفارش‌ها</h3>
+            <div class="vp-sidebar__submenu">
+              <a href="/vendor/orders/open" class="vp-nav-item">
+                <img src="/img/placeholder-orders.svg" alt="مدیریت سفارشات جاری" class="vp-nav-item__icon">
+                <span class="vp-nav-item__text">مدیریت سفارشات جاری</span>
+              </a>
+              <a href="/vendor/orders/history" class="vp-nav-item">
+                <img src="/img/placeholder-history.svg" alt="تاریخچه سفارشات" class="vp-nav-item__icon">
+                <span class="vp-nav-item__text">تاریخچه سفارشات</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- مالی Section -->
+          <div class="vp-sidebar__section">
+            <h3 class="vp-sidebar__section-title">مالی</h3>
+            <div class="vp-sidebar__submenu">
+              <a href="/vendor/billing" class="vp-nav-item">
+                <img src="/img/placeholder-billing.svg" alt="صورتحساب ها" class="vp-nav-item__icon">
+                <span class="vp-nav-item__text">صورتحساب ها</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- تحلیل عملکرد Section -->
+          <div class="vp-sidebar__section">
+            <h3 class="vp-sidebar__section-title">تحلیل عملکرد</h3>
+            <div class="vp-sidebar__submenu">
+              <a href="/vendor/analytics" class="vp-nav-item">
+                <img src="/img/placeholder-analytics.svg" alt="فروش و درآمد" class="vp-nav-item__icon">
+                <span class="vp-nav-item__text">فروش و درآمد</span>
+              </a>
+              <a href="/vendor/returns" class="vp-nav-item">
+                <img src="/img/placeholder-return.svg" alt="مرجوعی" class="vp-nav-item__icon">
+                <span class="vp-nav-item__text">مرجوعی</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- راهنما Section -->
+          <div class="vp-sidebar__section">
+            <h3 class="vp-sidebar__section-title">راهنما</h3>
+            <div class="vp-sidebar__submenu">
+              <a href="/vendor/academy" class="vp-nav-item">
+                <img src="/img/placeholder-academy.svg" alt="مرکز آموزش فروشندگان" class="vp-nav-item__icon">
+                <span class="vp-nav-item__text">مرکز آموزش فروشندگان</span>
+              </a>
+              <a href="/vendor/restricted" class="vp-nav-item">
+                <img src="/img/placeholder-restricted.svg" alt="کالاهای غیرمجاز" class="vp-nav-item__icon">
+                <span class="vp-nav-item__text">کالاهای غیرمجاز</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- پشتیبانی Section -->
+          <div class="vp-sidebar__section">
+            <h3 class="vp-sidebar__section-title">پشتیبانی</h3>
+            <div class="vp-sidebar__submenu">
+              <a href="/vendor/support" class="vp-nav-item">
+                <img src="/img/placeholder-support.svg" alt="درخواست پشتیبانی" class="vp-nav-item__icon">
+                <span class="vp-nav-item__text">درخواست پشتیبانی</span>
+              </a>
+            </div>
+          </div>
+        </nav>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="vp-main">
+        <!-- Content Wrapper -->
+        <div class="vp-content-wrapper">
+          <!-- Breadcrumbs (empty for now) -->
+          <nav class="vp-breadcrumbs" aria-label="مسیر ناوبری">
+            <!-- Breadcrumbs will be added here if needed -->
+          </nav>
+
+          <!-- Page Content -->
+          <div class="vp-page-content">
+            <h1 class="vp-page-title">جستجو و ثبت کالا</h1>
+            <p class="vp-page-description">در این بخش می‌توانید کالاهای جدید را جستجو و ثبت کنید.</p>
+            
+            <!-- Product Search Card -->
+            <div class="vp-product-search-section">
+              <div class="vp-product-search-container">
+                <div class="vp-product-search-card">
+                  <h2 class="vp-card__heading">ثبت کالا برای فروش</h2>
+                  <p class="vp-card__description">ابتدا کالای مد نظر خود را در استاویتا جستجو کنید:</p>
+                  
+                  <!-- Search Input Group -->
+                  <div class="vp-input-group">
+                    <div class="vp-search-input-container">
+                      <input 
+                        type="text" 
+                        name="q" 
+                        placeholder="جستجوی کالا" 
+                        class="vp-search-input"
+                        id="vp-productSearchInput"
+                      >
+                      <button class="vp-search-button" aria-label="جستجو">
+                        <img src="/img/placeholder-search.svg" alt="جستجو" class="vp-search-button__icon">
+                      </button>
+                    </div>
+                  </div>
+                  
+                  <!-- Divider -->
+                  <div class="vp-card__divider"></div>
+                  
+                  <p class="vp-card__description">اگر کالا پیدا نشد، دسته بندی کالا را مشخص کنید :</p>
+                  
+                  <!-- Not Found Button -->
+                  <button class="vp-button vp-button--primary vp-button--full-width">
+                    کالای مورد نظر را پیدا نکردم
+                  </button>
+                  
+                  <!-- Actions -->
+                  <div class="vp-card__actions">
+                    <a href="/vendor/products" class="vp-link">بازگشت</a>
+                    <button class="vp-button vp-button--primary vp-button--small">مشاهده لیست کالاها</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Theme Toggle Button -->
+    <button class="vp-theme-toggle" id="vp-themeToggle" data-mode-toggle aria-label="تغییر تم">
+      <span class="vp-theme-toggle__icon">🌙</span>
+    </button>
+  </div>
+
+  <script>
+    // ========== THEME TOGGLE FUNCTIONALITY ==========
+    function toggleTheme() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      
+      // Update theme toggle button icon
+      const themeIcon = document.querySelector('.vp-theme-toggle__icon');
+      if (themeIcon) {
+        themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+      }
+    }
+
+    // Initialize theme on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      
+      const themeIcon = document.querySelector('.vp-theme-toggle__icon');
+      if (themeIcon) {
+        themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+      }
+    });
+
+    // Theme toggle event listener using data-mode-toggle selector
+    document.querySelector('[data-mode-toggle]')?.addEventListener('click', toggleTheme);
+
+    // ========== SIDEBAR FUNCTIONALITY ==========
+    function toggleSidebar() {
+      const sidebar = document.getElementById('vp-sidebar');
+      const isCollapsed = sidebar.classList.contains('vp-sidebar--collapsed');
+      
+      if (isCollapsed) {
+        sidebar.classList.remove('vp-sidebar--collapsed');
+        localStorage.setItem('sidebarCollapsed', 'false');
+      } else {
+        sidebar.classList.add('vp-sidebar--collapsed');
+        localStorage.setItem('sidebarCollapsed', 'true');
+      }
+    }
+
+    // Initialize sidebar state
+    document.addEventListener('DOMContentLoaded', () => {
+      const sidebarCollapsed = localStorage.getItem('sidebarCollapsed') === 'true';
+      const sidebar = document.getElementById('vp-sidebar');
+      
+      if (sidebarCollapsed) {
+        sidebar.classList.add('vp-sidebar--collapsed');
+      }
+    });
+
+    // Mobile sidebar toggle
+    function toggleMobileSidebar() {
+      const sidebar = document.getElementById('vp-sidebar');
+      sidebar.classList.toggle('vp-sidebar--mobile-open');
+    }
+
+    // ========== RESPONSIVE BEHAVIOR ==========
+    function getCurrentBreakpoint() {
+      const width = window.innerWidth;
+      if (width >= 1280) return 'xl';
+      if (width >= 1024) return 'lg';
+      if (width >= 768) return 'md';
+      if (width >= 640) return 'sm';
+      return 'xs';
+    }
+
+    function handleResponsiveChanges() {
+      const breakpoint = getCurrentBreakpoint();
+      const sidebar = document.getElementById('vp-sidebar');
+      const header = document.querySelector('.vp-header');
+      
+      // Apply responsive rules
+      if (breakpoint === 'lg' || breakpoint === 'md') {
+        sidebar.style.width = '320px';
+      }
+      
+      if (breakpoint === 'md' || breakpoint === 'sm' || breakpoint === 'xs') {
+        sidebar.classList.add('vp-sidebar--collapsed');
+        header.classList.add('vp-header--compact');
+      } else {
+        sidebar.classList.remove('vp-sidebar--collapsed');
+        header.classList.remove('vp-header--compact');
+      }
+      
+      if (breakpoint === 'sm' || breakpoint === 'xs') {
+        document.documentElement.style.setProperty('--container-padding', '16px');
+        document.documentElement.style.setProperty('--typography-scale', '0.95');
+      } else {
+        document.documentElement.style.setProperty('--container-padding', '24px');
+        document.documentElement.style.setProperty('--typography-scale', '1');
+      }
+    }
+
+    // Add mobile menu button for small screens
+    document.addEventListener('DOMContentLoaded', () => {
+      const header = document.querySelector('.vp-header__content');
+      const mobileMenuBtn = document.createElement('button');
+      mobileMenuBtn.className = 'vp-mobile-menu-btn';
+      mobileMenuBtn.innerHTML = '☰';
+      mobileMenuBtn.setAttribute('aria-label', 'منوی موبایل');
+      mobileMenuBtn.addEventListener('click', toggleMobileSidebar);
+      
+      header.insertBefore(mobileMenuBtn, header.firstChild);
+      
+      // Initialize responsive behavior
+      handleResponsiveChanges();
+      
+      // Listen for window resize
+      window.addEventListener('resize', handleResponsiveChanges);
+    });
+
+    // ========== PRODUCT SEARCH FUNCTIONALITY ==========
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('vp-productSearchInput');
+      const searchButton = document.querySelector('.vp-search-button');
+      const notFoundButton = document.querySelector('.vp-button--full-width');
+      const viewListButton = document.querySelector('.vp-button--small');
+
+      // Search functionality
+      function performSearch() {
+        const query = searchInput.value.trim();
+        if (query) {
+          console.log('جستجو برای:', query);
+          // Here you would implement actual search functionality
+          alert(`جستجو برای "${query}" انجام شد (نمونه)`);
+        }
+      }
+
+      // Search button click
+      searchButton?.addEventListener('click', performSearch);
+
+      // Enter key in search input
+      searchInput?.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          performSearch();
+        }
+      });
+
+      // Not found button
+      notFoundButton?.addEventListener('click', () => {
+        console.log('کالا پیدا نشد - رفتن به دسته‌بندی');
+        alert('رفتن به صفحه دسته‌بندی کالا (نمونه)');
+      });
+
+      // View list button
+      viewListButton?.addEventListener('click', () => {
+        console.log('مشاهده لیست کالاها');
+        alert('رفتن به لیست کالاها (نمونه)');
+      });
+    });
+  </script>
+</body>
+</html>

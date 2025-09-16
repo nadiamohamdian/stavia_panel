@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>استاویتا | ورود / ثبت‌نام</title>
+  <link rel="stylesheet" href="theme-tokens.css">
   <link rel="stylesheet" href="main.css">
   <!-- Persian fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,6 +33,7 @@
         <!-- Right Form Panel -->
         <div class="form-section">
           <button class="close-btn" aria-label="بستن">×</button>
+          <button class="theme-toggle-btn" aria-label="تغییر تم" onclick="toggleTheme()">🌙</button>
           
           <h1 class="form-title">ورود یا ثبت نام</h1>
           
@@ -106,6 +108,32 @@
   </main>
 
   <script>
+    // Theme toggle functionality
+    function toggleTheme() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      
+      // Update theme toggle button icon
+      const themeBtn = document.querySelector('.theme-toggle-btn');
+      if (themeBtn) {
+        themeBtn.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+      }
+    }
+
+    // Initialize theme on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      
+      const themeBtn = document.querySelector('.theme-toggle-btn');
+      if (themeBtn) {
+        themeBtn.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+      }
+    });
+
     // Close button functionality
     document.querySelector('.close-btn')?.addEventListener('click', ()=>{
       document.querySelector('.desktop-layout').style.display = 'none';
