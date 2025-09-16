@@ -1,172 +1,0 @@
-<!doctype html>
-<html lang="fa" dir="rtl">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>استاویتا | ورود / ثبت‌نام</title>
-  <link rel="stylesheet" href="theme-tokens.css">
-  <link rel="stylesheet" href="main.css">
-  <!-- Persian fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <main class="page">
-    <!-- Desktop Layout -->
-    <div class="desktop-layout">
-      <!-- Background Card -->
-      <div class="main-card">
-        <!-- Left Gradient Panel -->
-        <div class="gradient-panel">
-          <!-- Logo Section -->
-          <div class="logo-section">
-            <img src="img/icon_login.svg" alt="Stavita Logo" class="desktop-logo">
-            <div class="logo-sub-text">SELLER CENTER</div>
-          </div>
-          <!-- Illustration -->
-          <div class="illustration-container">
-            <img src="img/3d-render-secure-login-password-illustration---Copy 1 (2).png" alt="Login Illustration" class="illustration">
-          </div>
-        </div>
-
-        <!-- Right Form Panel -->
-        <div class="form-section">
-          <button class="close-btn" aria-label="بستن">×</button>
-          <button class="theme-toggle-btn" aria-label="تغییر تم" onclick="toggleTheme()">🌙</button>
-          
-          <h1 class="form-title">ورود یا ثبت نام</h1>
-          
-          <div class="form-description">
-            <p>سلام!</p>
-            <p>برای فروش در استاویتا آماده‌اید؟</p>
-            <p>شماره موبایل یا ایمیل خود را وارد کنید:</p>
-          </div>
-
-          <form class="auth-form" id="loginForm" novalidate>
-            <label for="identifier" class="field-label">شماره موبایل یا ایمیل</label>
-            <div class="input-container">
-              <input id="identifier" name="identifier" inputmode="text" autocomplete="username" placeholder="09123456789">
-            </div>
-
-            <button type="submit" class="submit-btn">تایید</button>
-
-            <div class="help-links">
-              <a href="#" class="help-link">تماس با پشتیبانی</a>
-              <span class="link-divider">|</span>
-              <a href="#" class="help-link">راهنمای ثبت‌نام</a>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <!-- Mobile Layout -->
-    <div class="mobile-layout">
-      <!-- Mobile Card -->
-      <div class="mobile-card">
-        <!-- Mobile Illustration -->
-        <div class="mobile-illustration">
-          <img src="img/login_mob.png" alt="Mobile Login Illustration" class="mobile-illustration-img">
-        </div>
-        
-        <!-- Mobile Logo -->
-        <div class="mobile-logo">
-          <img src="img/icon_login.svg" alt="Stavita Logo" class="mobile-logo-img">
-        </div>
-
-        <!-- Mobile Close Button -->
-        <button class="mobile-close-btn" aria-label="بستن">×</button>
-
-        <!-- Mobile Form -->
-        <div class="mobile-form-section">
-          
-          <h1 class="mobile-form-title">ورود یا ثبت نام</h1>
-          
-          <div class="mobile-form-description">
-            <p>سلام!</p>
-            <p>برای فروش در استاویتا آماده‌اید؟</p>
-            <p>شماره موبایل یا ایمیل خود را وارد کنید:</p>
-          </div>
-
-          <form class="mobile-auth-form" id="mobileLoginForm" novalidate>
-            <div class="mobile-input-container">
-              <input id="mobileIdentifier" name="identifier" inputmode="text" autocomplete="username" placeholder="09123456789">
-            </div>
-
-            <button type="submit" class="mobile-submit-btn">تایید</button>
-
-            <div class="mobile-help-links">
-              <a href="#" class="mobile-help-link">تماس با پشتیبانی</a>
-              <span class="mobile-link-divider">|</span>
-              <a href="#" class="mobile-help-link">راهنمای ثبت‌نام</a>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <script>
-    // Theme toggle functionality
-    function toggleTheme() {
-      const html = document.documentElement;
-      const currentTheme = html.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      
-      // Update theme toggle button icon
-      const themeBtn = document.querySelector('.theme-toggle-btn');
-      if (themeBtn) {
-        themeBtn.textContent = newTheme === 'dark' ? '☀️' : '🌙';
-      }
-    }
-
-    // Initialize theme on page load
-    document.addEventListener('DOMContentLoaded', () => {
-      const savedTheme = localStorage.getItem('theme') || 'light';
-      document.documentElement.setAttribute('data-theme', savedTheme);
-      
-      const themeBtn = document.querySelector('.theme-toggle-btn');
-      if (themeBtn) {
-        themeBtn.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
-      }
-    });
-
-    // Close button functionality
-    document.querySelector('.close-btn')?.addEventListener('click', ()=>{
-      document.querySelector('.desktop-layout').style.display = 'none';
-    });
-    
-    document.querySelector('.mobile-close-btn')?.addEventListener('click', ()=>{
-      document.querySelector('.mobile-layout').style.display = 'none';
-    });
-
-    // Form validation
-    const forms = ['loginForm', 'mobileLoginForm'];
-    forms.forEach(formId => {
-      const form = document.getElementById(formId);
-      const input = form.querySelector('input[name="identifier"]');
-      
-      form.addEventListener('submit', (e)=>{
-        e.preventDefault();
-        const v = input.value.trim();
-        const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
-        const isIRMobile = /^09\d{9}$/.test(v);
-        
-        if(!(isEmail || isIRMobile)) {
-          input.classList.add('has-error');
-          input.focus();
-          input.setAttribute('aria-invalid', 'true');
-          input.setAttribute('title','یک ایمیل معتبر یا شماره موبایل ۱۱ رقمی وارد کنید');
-          return;
-        }
-        
-        input.classList.remove('has-error');
-        alert('ارسال شد (نمونه)');
-      });
-    });
-  </script>
-</body>
-</html>

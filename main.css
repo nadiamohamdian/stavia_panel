@@ -15,20 +15,19 @@
   --bg-base: #FFFFFF;
   --bg-elev: #F6F7FB;
   --bg-soft: #ECF0FF;
+  --row-blue: #98BEFF;
   
   /* ========== BORDER COLORS ========== */
   --border: #E5E7EB;
   
   /* ========== BORDER RADIUS ========== */
-  --radius-sm: 8px;
-  --radius-md: 12px;
+  --radius-md: 10px;
   --radius-lg: 20px;
   --radius-pill: 9999px;
   
   /* ========== SHADOWS ========== */
-  --shadow-sm: 0 1px 2px rgba(0,0,0,.06);
-  --shadow-md: 0 6px 16px rgba(0,0,0,.12);
-  --shadow-glow-brand: 0 0 10px var(--brandGlow);
+  --shadow-glow-brand: 0 0 10px #0091D0;
+  --shadow-card: 0 6px 16px rgba(0,0,0,.06);
   
   /* ========== TYPOGRAPHY ========== */
   --font-family: 'IRANYekan', 'Vazirmatn', system-ui, sans-serif;
@@ -43,6 +42,7 @@
   --font-size-xl: calc(var(--font-size-base) * var(--font-scale) * var(--font-scale)); /* 18px */
   --font-size-2xl: calc(var(--font-size-base) * var(--font-scale) * var(--font-scale) * var(--font-scale)); /* 20px */
   --font-size-3xl: calc(var(--font-size-base) * var(--font-scale) * var(--font-scale) * var(--font-scale) * var(--font-scale)); /* 25px */
+  
   
   /* ========== CONTAINER ========== */
   --container-max: 1280px;
@@ -142,8 +142,6 @@
   --border: #1F2937;
   
   /* Adjust shadows for dark mode */
-  --shadow-sm: 0 1px 2px rgba(0,0,0,.2);
-  --shadow-md: 0 6px 16px rgba(0,0,0,.3);
   --shadow-glow-brand: 0 0 10px var(--brandGlow);
 }
 
@@ -211,7 +209,7 @@ html, body {
   height: 40px;
   border: none;
   background: transparent;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -275,7 +273,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-card);
 }
 
 .vp-header__avatar-img {
@@ -291,7 +289,7 @@ html, body {
   height: 40px;
   border: none;
   background: transparent;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   cursor: pointer;
   font-size: 18px;
   color: var(--text-base);
@@ -573,7 +571,7 @@ html, body {
   background: var(--bg-elev);
   border-radius: var(--radius-lg);
   padding: 32px;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-card);
   width: 100%;
 }
 
@@ -751,7 +749,7 @@ html, body {
   align-items: center;
   justify-content: center;
   z-index: var(--z-fixed);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-card);
   transition: var(--transition-normal);
 }
 
@@ -1041,7 +1039,7 @@ html, body {
 
 [data-theme="dark"] .vp-product-search-card {
   background: var(--bg-elev);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-card);
 }
 
 [data-theme="dark"] .vp-search-input-container {
@@ -1059,7 +1057,7 @@ html, body {
 
 [data-theme="dark"] .vp-theme-toggle {
   background: var(--brand);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-card);
 }
 
 [data-theme="dark"] .vp-theme-toggle:hover {

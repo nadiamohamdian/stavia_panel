@@ -15,34 +15,25 @@
   --bg-base: #FFFFFF;
   --bg-elev: #F6F7FB;
   --bg-soft: #ECF0FF;
+  --row-blue: #98BEFF;
   
   /* ========== BORDER COLORS ========== */
   --border: #E5E7EB;
   
   /* ========== BORDER RADIUS ========== */
-  --radius-sm: 8px;
-  --radius-md: 12px;
+  --radius-md: 10px;
   --radius-lg: 20px;
   --radius-pill: 9999px;
   
   /* ========== SHADOWS ========== */
-  --shadow-sm: 0 1px 2px rgba(0,0,0,.06);
-  --shadow-md: 0 6px 16px rgba(0,0,0,.12);
-  --shadow-glow-brand: 0 0 10px var(--brandGlow);
+  --shadow-glow-brand: 0 0 10px #0091D0;
+  --shadow-card: 0 6px 16px rgba(0,0,0,.06);
   
   /* ========== TYPOGRAPHY ========== */
   --font-family: 'IRANYekan', 'Vazirmatn', system-ui, sans-serif;
-  --font-size-base: 14px;
-  --font-scale: 1.125;
   
-  /* Font Size Scale */
-  --font-size-xs: calc(var(--font-size-base) / var(--font-scale) / var(--font-scale)); /* 11px */
-  --font-size-sm: calc(var(--font-size-base) / var(--font-scale)); /* 12px */
-  --font-size-md: var(--font-size-base); /* 14px */
-  --font-size-lg: calc(var(--font-size-base) * var(--font-scale)); /* 16px */
-  --font-size-xl: calc(var(--font-size-base) * var(--font-scale) * var(--font-scale)); /* 18px */
-  --font-size-2xl: calc(var(--font-size-base) * var(--font-scale) * var(--font-scale) * var(--font-scale)); /* 20px */
-  --font-size-3xl: calc(var(--font-size-base) * var(--font-scale) * var(--font-scale) * var(--font-scale) * var(--font-scale)); /* 25px */
+  /* ========== DANGER COLOR ========== */
+  --danger: #ED1C24;
   
   /* ========== CONTAINER ========== */
   --container-max: 1280px;
@@ -160,21 +151,20 @@
 .bg-elev { background-color: var(--bg-elev); }
 .bg-soft { background-color: var(--bg-soft); }
 .bg-brand { background-color: var(--brand); }
+.bg-row-blue { background-color: var(--row-blue); }
 
 /* Border utilities */
 .border { border: 1px solid var(--border); }
 .border-brand { border: 1px solid var(--brand); }
 
 /* Radius utilities */
-.rounded-sm { border-radius: var(--radius-sm); }
 .rounded-md { border-radius: var(--radius-md); }
 .rounded-lg { border-radius: var(--radius-lg); }
 .rounded-pill { border-radius: var(--radius-pill); }
 
 /* Shadow utilities */
-.shadow-sm { box-shadow: var(--shadow-sm); }
-.shadow-md { box-shadow: var(--shadow-md); }
 .shadow-glow-brand { box-shadow: var(--shadow-glow-brand); }
+.shadow-card { box-shadow: var(--shadow-card); }
 
 /* Spacing utilities */
 .p-xs { padding: var(--space-xs); }
@@ -193,14 +183,6 @@
 .m-2xl { margin: var(--space-2xl); }
 .m-3xl { margin: var(--space-3xl); }
 
-/* Font size utilities */
-.text-xs { font-size: var(--font-size-xs); }
-.text-sm { font-size: var(--font-size-sm); }
-.text-md { font-size: var(--font-size-md); }
-.text-lg { font-size: var(--font-size-lg); }
-.text-xl { font-size: var(--font-size-xl); }
-.text-2xl { font-size: var(--font-size-2xl); }
-.text-3xl { font-size: var(--font-size-3xl); }
 
 /* ========== COMPONENT MIXINS ========== */
 /* These can be used as base classes for consistent styling */
